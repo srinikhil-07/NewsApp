@@ -12,10 +12,8 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 1. Search for custom query,
 2. Select from News API supported predefined categories for top headlines,
 
-![](https://github.com/Nikhil0487/NewsApp/blob/master/screenshots/Launch-Screen.png | width=100)
-![](https://github.com/Nikhil0487/NewsApp/blob/master/screenshots/News-Items.png | width=100)
-![](https://github.com/Nikhil0487/NewsApp/blob/master/screenshots/News-Feed.png | width=100)
-![](https://github.com/Nikhil0487/NewsApp/blob/master/screenshots/Web-View.png | width=100)
+<img src=screenshots/Launch-Screen.png height=400> <img src=screenshots/News-Items.png height=400>
+<img src=screenshots/News-Feed.png height=400> <img src=screenshots/Web-View.png height=400>
 
 ## TODO
 - [ ] Support for different search combinations
