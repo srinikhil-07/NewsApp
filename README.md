@@ -12,10 +12,10 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 1. Search for custom query,
 2. Select from News API supported predefined categories for top headlines,
 
-![Screenshot](/screenshots/Launch-Screen.png "Launch Screen")
-![Screenshot](/screenshots/News-Items.png "News Items Screen")
-![Screenshot](/screenshots/News-Feed.png "News-Feed Screen")
-![Screenshot](/screenshots/Web-View.png "Web-View Screen")
+![Screenshot](/screenshots/Launch-Screen.png =250x250 "Launch Screen")
+![Screenshot](/screenshots/News-Items.png =250x250 "News Items Screen")
+![Screenshot](/screenshots/News-Feed.png =250x250 "News-Feed Screen")
+![Screenshot](/screenshots/Web-View.png =250x250 "Web-View Screen")
 
 ## TODO
 - [ ] Support for different search combinations
