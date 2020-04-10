@@ -13,13 +13,13 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 2. Select from News API supported predefined categories for top headlines,
 
 ## TODO
-- [] Support for different search combinations
-- [] Page support if news items are more than 20 items
-- [] Refresh support for news feed 
-- [] Saving search history locally
-- [] Adding news sources list supported by News API
-- [] WKWebView with page navigation, bookmark and open in browser support
-- [] If network download gets delayed, table view should handle it
+- [ ] Support for different search combinations
+- [ ] Page support if news items are more than 20 items
+- [ ] Refresh support for news feed 
+- [ ] Saving search history locally
+- [ ] Adding news sources list supported by News API
+- [ ] WKWebView with page navigation, bookmark and open in browser support
+- [ ] If network download gets delayed, table view should handle it
 
 ## Credits
 This is my first iOS app. 
