@@ -14,6 +14,7 @@ class NewsListenerController: UITableViewController {
     public var newsURL: String = String()
     private var activityIndicator = UIActivityIndicatorView(style: .medium)
     private var page = 0
+    private var endAlertShown = false
     override func viewDidLoad() {
         self.page = 1
         super.viewDidLoad()
@@ -27,11 +28,11 @@ class NewsListenerController: UITableViewController {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         activityIndicator.startAnimating()
         print("Fetching Webservice articles")
-        WebService().getArticles(for: newsURL, with: page) { articles in
+        WebService().getArticles(for: newsURL, with: page) { articles, totalResults in
             if let articles = articles {
                 dataFetched = true
                 self.page = self.page + 1
-                self.articleListViewModel = ArticleListViewModel(articles)
+                self.articleListViewModel = ArticleListViewModel(articles, totalArticles: totalResults)
             } else {
                 print("No data")
             }
@@ -40,15 +41,7 @@ class NewsListenerController: UITableViewController {
                 if dataFetched {
                     self.tableView.reloadData()
                 } else {
-                    let alert = UIAlertController.init(title: "Fetch Failed", message: "Swipe down to retry", preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "Ok", style: .default) {
-                        (UIAlertAction) -> Void in
-                    }
-                    alert.addAction(alertAction)
-                    self.present(alert, animated: true)
-                    {
-                        () -> Void in
-                    }
+                    self.showAlert(with: "Fetch Failed", message: "Please try again", action: "Ok")
                 }
             }
         }
@@ -70,10 +63,14 @@ class NewsListenerController: UITableViewController {
     }
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
-        if (endScrolling >= scrollView.contentSize.height)
+        if (endScrolling >= scrollView.contentSize.height && (page-1)*20 < self.articleListViewModel.totalNoOfArticles())
         {
-            print("fetching new news articles")
+            print("Requesting for new articles")
             fetchAdditionalNewsArticles()
+        }
+        if (page-1)*20 > self.articleListViewModel.totalNoOfArticles() && !endAlertShown {
+            self.showAlert(with: "You are upto date", message: "", action: "Ok")
+            endAlertShown = true
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -110,13 +107,17 @@ extension NewsListenerController {
 // MARK: - Dynamically append news items
 extension NewsListenerController {
     func fetchAdditionalNewsArticles() {
+        DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+        }
         print("Fetching addtional news articles: \(self.page)")
-        WebService().getArticles(for: self.newsURL, with: self.page) { articles in
+        WebService().getArticles(for: self.newsURL, with: self.page) { articles, totalResults in
             if let newArticles = articles {
                 self.page = self.page + 1
                 let intialCount = self.articleListViewModel.numberOfRowsInSection(0)
                 self.articleListViewModel.add(newArticles: newArticles)
                 DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
                     let finalCount = self.articleListViewModel.numberOfRowsInSection(0)
                     let indexPaths = (intialCount ..< finalCount).map {
                         IndexPath(row: $0, section: 0)
@@ -128,6 +129,20 @@ extension NewsListenerController {
             } else {
                 print("No data for page: \(self.page)")
             }
+        }
+    }
+}
+// MARK: - Custom Alerts
+extension NewsListenerController {
+    func showAlert(with title: String, message: String, action: String) {
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: action, style: .default) {
+            (UIAlertAction) -> Void in
+        }
+        alert.addAction(alertAction)
+        self.present(alert, animated: true)
+        {
+            () -> Void in
         }
     }
 }

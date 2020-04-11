@@ -10,7 +10,7 @@ import Foundation
 
 class WebService {
     let apiKey = "b18a5f797c9b415a8dffd864df0e8fe6"
-    func getArticles(for urlString: String, with page: Int, completion: @escaping ([Article]?) -> ()) {
+    func getArticles(for urlString: String, with page: Int, completion: @escaping ([Article]?, Int) -> ()) {
         print("Initiating data task")
         let newsURL = getNewsURL(for: urlString,with: page)
         if let url = URL(string: newsURL) {
@@ -18,18 +18,19 @@ class WebService {
             URLSession.shared.dataTask(with: request)  { data, response, error in
                 if let error = error {
                     print("Error in request: \(error.localizedDescription)")
-                    completion(nil)
+                    completion(nil,0)
                 } else if let data = data {
-                    //print("Data fetch complete: \(String(describing: String(data: data, encoding: .utf8)))")
                     do {
+                        let rainCheck = try JSONDecoder().decode(Payload.self, from: data)
+                        print("Status = \(rainCheck.status), Total results: \(rainCheck.totalResults)")
                         let articleList = try JSONDecoder().decode(ArticleList.self, from: data)
-                        //print("Articles: \(articleList.articles)")
-                        completion(articleList.articles)
+                        completion(articleList.articles,rainCheck.totalResults)
                     } catch {
                         print("Error in JSON decoding : \(String(describing: error))")
-                        completion(nil)
+                        completion(nil,0)
                     }
                 }
+                print("Data task complete")
             }.resume()
         }
     }

@@ -17,3 +17,8 @@ struct Article: Decodable {
     let description: String?
     let url: String
 }
+
+struct Payload: Decodable {
+    let status: String
+    let totalResults: Int
+}
