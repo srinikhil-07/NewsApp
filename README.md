@@ -14,6 +14,7 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 
 <pre>
 <img src=screenshots/Launch-Screen.png height=500, width=250>           <img src=screenshots/News-Items.png height=500, width=250>
+
 <img src=screenshots/News-Feed.png height=500, width=250>           <img src=screenshots/Web-View.png height=500, width=250>
 </pre>
 ## TODO
