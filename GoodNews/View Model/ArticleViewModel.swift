@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct ArticleListViewModel {
-    let articles: [Article]
+class ArticleListViewModel {
+    private var articles: [Article] = []
 }
 extension ArticleListViewModel {
+    convenience init(_ newArticles: [Article]) {
+        self.init()
+        articles.append(contentsOf: newArticles)
+    }
     var noOfSections: Int {
         return 1
     }
@@ -21,6 +25,9 @@ extension ArticleListViewModel {
     func articleAtIndex(_ index: Int) -> ArticleViewModel {
         let article = self.articles[index]
         return ArticleViewModel(article)
+    }
+    func add(newArticles: [Article]) {
+        articles.append(contentsOf: newArticles)
     }
 }
 struct ArticleViewModel {
@@ -35,7 +42,7 @@ extension ArticleViewModel {
     var title: String {
         return article.title
     }
-    var description: String {
+    var description: String? {
         return article.description
     }
     var articleURL: String {

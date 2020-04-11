@@ -22,15 +22,12 @@ class NewsItemController: UITableViewController, UISearchBarDelegate {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Row selected: \(indexPath.row)")
         performSegue(withIdentifier: "NewsItems", sender: "category="+titles[indexPath.row])
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("No.of rows: \(self.titles.count)")
         return self.titles.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("Call for cell at row: \(indexPath.row)")
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsItemCell", for: indexPath) as? NewsItemCell else {
             fatalError("Article cell not found")
         }
