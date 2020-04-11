@@ -12,17 +12,16 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 1. Search for custom query,
 2. Select from News API supported predefined categories for top headlines,
 
-<img src=screenshots/Launch-Screen.png height=400> <img src=screenshots/News-Items.png height=400>
+<img src=screenshots/Launch-Screen.png height=400, width=200> <img src=screenshots/News-Items.png height=400>
 <img src=screenshots/News-Feed.png height=400> <img src=screenshots/Web-View.png height=400>
 
 ## TODO
 - [ ] Support for different search combinations
-- [ ] Page support if news items are more than 20 items
-- [ ] Refresh support for news feed 
+- [x] Page support if news items are more than 20 items
+- [x] Refresh support for news feed 
 - [ ] Saving search history locally
 - [ ] Adding news sources list supported by News API
 - [ ] WKWebView with page navigation, bookmark and open in browser support
-- [ ] If network download gets delayed, table view should handle it
 
 ## Credits
 This is my first iOS app. 
