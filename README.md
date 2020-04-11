@@ -12,9 +12,10 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 1. Search for custom query,
 2. Select from News API supported predefined categories for top headlines,
 
+<pre>
 <img src=screenshots/Launch-Screen.png height=500, width=250>           <img src=screenshots/News-Items.png height=500, width=250>
 <img src=screenshots/News-Feed.png height=500, width=250>           <img src=screenshots/Web-View.png height=500, width=250>
-
+</pre>
 ## TODO
 - [ ] Support for different search combinations
 - [x] Page support if news items are more than 20 items
