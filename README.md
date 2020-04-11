@@ -12,7 +12,7 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 1. Search for custom query,
 2. Select from News API supported predefined categories for top headlines,
 
-<img src=screenshots/Launch-Screen.png height=500, width=300> <img src=screenshots/News-Items.png height=400>
+<img src=screenshots/Launch-Screen.png height=500, width=250> <img src=screenshots/News-Items.png height=400>
 <img src=screenshots/News-Feed.png height=400> <img src=screenshots/Web-View.png height=400>
 
 ## TODO
