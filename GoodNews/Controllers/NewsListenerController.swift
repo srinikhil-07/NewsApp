@@ -41,7 +41,7 @@ class NewsListenerController: UITableViewController {
                 if dataFetched {
                     self.tableView.reloadData()
                 } else {
-                    self.showAlert(with: "Fetch Failed", message: "Please try again", action: "Ok")
+                    self.showAlert(with: "Couldn't Fetch Articles", message: "Please try again", action: "Ok")
                 }
             }
         }

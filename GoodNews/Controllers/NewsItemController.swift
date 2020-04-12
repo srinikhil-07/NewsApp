@@ -16,7 +16,7 @@ class NewsItemController: UITableViewController, UISearchBarDelegate {
         print("The view did load")
         super.viewDidLoad()
         searchBar.delegate = self
-        searchBar.placeholder = "Search For News"
+        searchBar.placeholder = "Search For News e.g.,Tom Hanks"
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
@@ -26,6 +26,9 @@ class NewsItemController: UITableViewController, UISearchBarDelegate {
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.titles.count
+    }
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Top Headlines"
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsItemCell", for: indexPath) as? NewsItemCell else {
