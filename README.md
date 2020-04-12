@@ -1,8 +1,8 @@
 # NewsApp
-iOS news feed app based on NewsAPI
+This is an iOS newsfeed and top headlines app written in Swift and based on NewsAPI.
 
 ## About 
-I wanted to have my own one stop custom news feed app. The backend is supported by News API.
+I wanted to have my own one stop custom newsfeed/top-headlines app. I felt I was missing on some categories of news like Economy. So, I built this app as a Do-It-yourself(DIY) project to keep me uptodate.
 
 ## Design
 1. MVVM architecture,
@@ -17,6 +17,7 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 
 <img src=screenshots/News-Feed.png height=500, width=250>     <img src=screenshots/Web-View.png height=500, width=250>      <img src=screenshots/News-Uptodate.png height=500, width=250>
 </pre>
+
 ## TODO
 - [ ] Support for different search combinations
 - [x] Page support if news items are more than 20 items
