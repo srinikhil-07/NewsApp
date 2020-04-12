@@ -13,9 +13,9 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 2. Select from News API supported predefined categories for top headlines,
 
 <pre>
-<img src=screenshots/Launch-Screen.png height=500, width=250>           <img src=screenshots/News-Items.png height=500, width=250>
+<img src=screenshots/Launch-Screen.png height=500, width=250>     <img src=screenshots/News-Items.png height=500, width=250>      <img src=screenshots/New-Fetch-Fail.png height=500, width=250>
 
-<img src=screenshots/News-Feed.png height=500, width=250>           <img src=screenshots/Web-View.png height=500, width=250>
+<img src=screenshots/News-Feed.png height=500, width=250>     <img src=screenshots/Web-View.png height=500, width=250>      <img src=screenshots/News-Uptodate.png height=500, width=250>
 </pre>
 ## TODO
 - [ ] Support for different search combinations
@@ -25,6 +25,8 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 - [ ] Adding news sources list supported by News API
 - [ ] WKWebView with page navigation, bookmark and open in browser support
 
+## Problems To Be Solved
+- [ ] News categories listed in the app belong to a particular country (i.e., India). Can an option to select a country (or none at all) be given somewhere? 
 ## Credits
 This is my first iOS app. 
 1. This app has huge improvements on a sample app taught in Udemy course https://www.udemy.com/course/mastering-mvvm-for-ios/
