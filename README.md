@@ -25,6 +25,8 @@ I wanted to have my own one stop custom news feed app. The backend is supported 
 - [ ] Adding news sources list supported by News API
 - [ ] WKWebView with page navigation, bookmark and open in browser support
 
+## Problems To Be Solved
+- [ ] News categories listed in the app belong to a particular country (i.e., India). Can an option to select a country (or none at all) be given somewhere? 
 ## Credits
 This is my first iOS app. 
 1. This app has huge improvements on a sample app taught in Udemy course https://www.udemy.com/course/mastering-mvvm-for-ios/
