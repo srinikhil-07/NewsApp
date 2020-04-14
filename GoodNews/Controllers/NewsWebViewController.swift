@@ -7,20 +7,15 @@
 //
 
 import Foundation
-import WebKit
+import SafariServices
 
-class NewsWebViewController: UIViewController, WKUIDelegate {
+class NewsWebViewController: UIViewController, SFSafariViewControllerDelegate {
     var newsWebURL: URL!
-    @IBOutlet var newsWebView: WKWebView!
-    override func loadView() {
-        let webConfiguration = WKWebViewConfiguration()
-        newsWebView = WKWebView(frame: .zero, configuration: webConfiguration)
-        newsWebView.uiDelegate = self
-        view = newsWebView
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let myRequest = URLRequest(url: newsWebURL)
-        newsWebView.load(myRequest)
+        let vc = SFSafariViewController(url: newsWebURL)
+        vc.delegate = self
+        present(vc, animated: true)
     }
 }

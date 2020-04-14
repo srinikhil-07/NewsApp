@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
-class NewsListenerController: UITableViewController {
+class NewsListenerController: UITableViewController, SFSafariViewControllerDelegate {
     private var articleListViewModel: ArticleListViewModel!
     public var newsURL: String = String()
     private var activityIndicator = UIActivityIndicatorView(style: .medium)
@@ -77,7 +78,11 @@ class NewsListenerController: UITableViewController {
         let articleAtCell = self.articleListViewModel.articleAtIndex(indexPath.row)
         let urlString = articleAtCell.articleURL
         if let url = URL(string: urlString) {
-            performSegue(withIdentifier: "NewsView", sender: url)
+            let sfConfiguration = SFSafariViewController.Configuration()
+            sfConfiguration.entersReaderIfAvailable = true
+            let articleWebView = SFSafariViewController(url: url, configuration: sfConfiguration)
+            articleWebView.delegate = self
+            present(articleWebView, animated: true)
         } else {
             print("Error in forming URL")
         }

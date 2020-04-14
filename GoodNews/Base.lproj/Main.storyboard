@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -113,46 +112,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="News Feed" id="Hcj-m4-TT7"/>
-                    <connections>
-                        <segue destination="j7U-L5-iLC" kind="show" identifier="NewsView" id="Dj7-Ld-6UW"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8HK-Gy-UAJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1751" y="-277"/>
-        </scene>
-        <!--News Web View Controller-->
-        <scene sceneID="MV4-xf-G9q">
-            <objects>
-                <viewController id="j7U-L5-iLC" customClass="NewsWebViewController" customModule="GoodNews" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vfS-dR-h3S">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F2B-le-0mi" customClass="NewsWebViewController" customModule="GoodNews" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                                <connections>
-                                    <outlet property="newsWebView" destination="vfS-dR-h3S" id="B6e-EC-uD2"/>
-                                </connections>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="8ro-GX-pja"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Zf3-Po-YvT"/>
-                    <connections>
-                        <outlet property="newsWebView" destination="F2B-le-0mi" id="eN1-BM-P8e"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sBT-NP-HTR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2749.275362318841" y="-277.23214285714283"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e3c-zG-pYP">

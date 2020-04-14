@@ -41,7 +41,7 @@ extension WebService {
         var newsURL = String()
         let validatedNewsItem = newsItem.replacingOccurrences(of: " " , with: "-").lowercased()
         if validatedNewsItem.contains("q=") {
-            newsURL = "https://newsapi.org/v2/everything?"+validatedNewsItem+"&sortBy=relevancy&language=en&page="+String(page)+"&apiKey="+apiKey
+            newsURL = "https://newsapi.org/v2/everything?"+validatedNewsItem+"&sortBy=publishedAt&language=en&page="+String(page)+"&apiKey="+apiKey
         } else {
             newsURL = "https://newsapi.org/v2/top-headlines?"+validatedNewsItem+"&country=in&page="+String(page)+"&apiKey="+apiKey
         }
