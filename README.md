@@ -24,7 +24,7 @@ I wanted to have my own one stop custom newsfeed/top-headlines app. I felt I was
 - [x] Refresh support for news feed 
 - [ ] Saving search history locally
 - [ ] Adding news sources list supported by News API
-- [ ] WKWebView with page navigation, bookmark and open in browser support
+- [x] SFSafariViewController with page navigation, bookmark and open in browser support
 
 ## Problems To Be Solved
 - [ ] News categories listed in the app belong to a particular country (i.e., India). Can an option to select a country (or none at all) be given somewhere? 
